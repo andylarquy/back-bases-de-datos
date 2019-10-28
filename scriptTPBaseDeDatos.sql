@@ -230,10 +230,11 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `TP Bases de Datos`.`Contenido_has_Comentario` (
   `Contenido_idContenido` INT NOT NULL,
-  `Comentario_idComentario` INT NULL,
+  `Comentario_idComentario` INT NOT NULL,
   PRIMARY KEY (`Contenido_idContenido`, `Comentario_idComentario`),
   INDEX `fk_Contenido_has_Comentario_Comentario1_idx` (`Comentario_idComentario` ASC),
   INDEX `fk_Contenido_has_Comentario_Contenido1_idx` (`Contenido_idContenido` ASC),
+  UNIQUE INDEX `Comentario_idComentario_UNIQUE` (`Comentario_idComentario` ASC),
   CONSTRAINT `fk_Contenido_has_Comentario_Contenido1`
     FOREIGN KEY (`Contenido_idContenido`)
     REFERENCES `TP Bases de Datos`.`Contenido` (`idContenido`)
@@ -250,3 +251,4 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
