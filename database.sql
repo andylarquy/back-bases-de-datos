@@ -111,26 +111,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `TP Bases de Datos`.`Reproduccion`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TP Bases de Datos`.`Reproduccion` (
-  `idReproduccion` INT NOT NULL,
-  `os_utilizado` VARCHAR(20) NULL,
-  `fecha_y_hora_de_inicio` DATETIME NULL,
-  `fecha_y_hora_de_fin` DATETIME NULL,
-  `Video_idVideo` INT NOT NULL,
-  `Video_Contenido_idContenido` INT NOT NULL,
-  PRIMARY KEY (`idReproduccion`),
-  INDEX `fk_Reproduccion_Video1_idx` (`Video_idVideo` ASC, `Video_Contenido_idContenido` ASC),
-  CONSTRAINT `fk_Reproduccion_Video1`
-    FOREIGN KEY (`Video_idVideo` , `Video_Contenido_idContenido`)
-    REFERENCES `TP Bases de Datos`.`Video` (`idVideo` , `Contenido_idContenido`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `TP Bases de Datos`.`Documentos`
 -- -----------------------------------------------------
 
