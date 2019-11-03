@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS `TP Bases de Datos`.`Contenido` (
   `extension` VARCHAR(3),
   `titulo` VARCHAR(45),
   `fecha_de_publicacion` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  `activo` INT(1) NOT NULL,
   PRIMARY KEY (`idContenido`))
 ENGINE = InnoDB;
 
