@@ -7,10 +7,6 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema TP Bases de Datos
 -- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema TP Bases de Datos
--- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `TP Bases de Datos` DEFAULT CHARACTER SET utf8 ;
 USE `TP Bases de Datos` ;
 
@@ -19,7 +15,7 @@ USE `TP Bases de Datos` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `TP Bases de Datos`.`Contenido` (
   `idContenido` INT NOT NULL AUTO_INCREMENT COMMENT'\n\n',
-  `extension` VARCHAR(3),
+  `extension` VARCHAR(4),
   `titulo` VARCHAR(45),
   `fecha_de_publicacion` DATE,
   `activo` INT(1) NOT NULL DEFAULT 0,
@@ -144,7 +140,7 @@ ENGINE = InnoDB;
 -- Table `TP Bases de Datos`.`DescargaDocumento`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `TP Bases de Datos`.`DescargaDocumento` (
-  `idDescargaDocumento` INT NOT NULL,
+  `idDescargaDocumento` INT NOT NULL AUTO_INCREMENT,
   `velocidad_descarga` FLOAT NULL,
   `Documentos_Contenido_idContenido` INT NOT NULL,
   `Encuesta_idEncuesta` INT NULL,
